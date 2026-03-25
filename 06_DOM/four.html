@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(LangName){
+        const li = document.createElement('li');
+        li.innerHTML = `${LangName}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("typescript")
+
+    function addOptiLanguage(LangName){
+        const li = document.createElement('li');
+
+        
+        
+        const addLi = document.createTextNode(LangName)
+        // li.appendChild(document.createTextNode(LangName))
+        li.appendChild(addLi) 
+
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('ruby')
+
+    // Editttttttttt
+    const secondLang = document.querySelector("li:nth-child(2)")
+    console.log(secondLang);
+    
+    // secondLang.innerHTML = "MOJO"
+    const newLi = document.createElement('li')
+    console.log(newLi);
+    
+    newLi.textContent = "MOJO"
+    console.log(newLi);
+    
+    secondLang.replaceWith(newLi)
+
+    // Editttttt
+    const firstLang = document.querySelector("li:first-child")
+    console.log(firstLang);
+    // const newLi = document.createElement('li')
+    // newLi.textContent = "Node.js"
+
+    // firstLang.replaceWith(newLi)
+
+    firstLang.outerHTML = '<li>NODE.js</li>'
+
+    // Removeeeeeee
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+    
+
+</script>
+</html>
