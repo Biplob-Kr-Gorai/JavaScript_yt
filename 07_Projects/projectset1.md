@@ -37,7 +37,7 @@ buttons.forEach(function (button) {
 ```
 
 
-#project - 2
+##project - 2 Solution code
 
 ```javascript
 const form = document.querySelector('form');
@@ -74,6 +74,27 @@ form.addEventListener('submit', function (event) {
   #solutioncode
   
 });
+
+
+```
+
+
+## Project - 3 Solution Code
+
+```javascript
+
+const clock = document.getElementById('clock');
+
+// const clock = document.queryselector("#clock")
+
+let date = new Date();
+console.log(date.toLocaleTimeString());
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 
 
 ```
