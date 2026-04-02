@@ -35,7 +35,4 @@ console.log(userTwo);
 
 //Note :- first of all when we use " this " then an empty object is got created which we called as an instance
 // Everytime we use this an empty object/parentheses is cretated
-//Constructor function is called beacuse of " new " keyword 
-
-//javascript has prototyping behaviour
-
+//Constructor function is called beacuse of " new " keyword
