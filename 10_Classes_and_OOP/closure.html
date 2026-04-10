@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // Lexical Scope
+    // function init(){
+    //     let name = "Sachin";
+    //     function displayName(){
+    //         console.log(name);
+            
+    //     }
+    //     function displayAge(){
+    //         console.log("Age of :", name);
+            
+    //     }
+    //     displayName()
+    //     displayAge()
+    // }
+    // init();
+
+
+    // Closure
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName(){
+            console.log(name);
+            
+        }
+        return displayName;
+    }
+//  Here not only the execution context is shared full memory is shared because of return
+//  Full lexical scope is accessed by the outer function
+//  Full Memory is shared not only the function executional context
+//  When we return the full function then not only the function returned actually the whole scope is returned(Lexical scope) 
+    const myFunc = makeFunc();
+    myFunc();
+</script>
+<script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick =clickHandler("orange")
+    document.getElementById('green').onclick =clickHandler("green")
+</script>
+</html>
